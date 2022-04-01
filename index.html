@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+
+		/* Styling the body */
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		/* Styling the background image by
+		giving its url and position */
+		.container {
+			height: 100vh;
+			width: 100%;
+			background-image:url('https://wallpaperaccess.com/full/1162775.jpg');
+			
+			/* Image used: */
+			background-size: cover;
+			background-position: center;
+			position: relative;
+		}
+
+		/* Styling the list tags to the
+		right of the navigation bar */
+		.nav li {
+			float: right;
+			list-style: none;
+		}
+
+		/* Styling the anchor tags of
+		the navigation bar */
+		.nav a {
+			list-style: none;
+			height: 50px;
+			line-height: 50px;
+			font-size: 1rem;
+			font-weight: 550;
+			display: block;
+			padding: 5px 35px;
+			color: red;
+			text-decoration: none;
+		}
+
+		/* Giving position and margin
+		to the content-div */
+		.content {
+			width: 100%;
+			position: absolute;
+			top: 45%;
+		}
+
+		/* Styling the left-col by
+		giving margin */
+		.left-col {
+			margin-left: 11%;
+		}
+
+		/* Styling the my sound placed
+		in the left-col */
+		.left-col h1 {
+			font-size: 50px;
+			color: rgb(5, 236, 63);
+		}
+
+		/* Styling the right-col */
+		.right-col {
+			float: right;
+			margin-right: 10%;
+			margin-top: -5%;
+			display: flex;
+			align-items: center;
+		}
+
+		/* Styling the text in the right-col */
+		.right-col p {
+			font-size: 20px;
+			color: rgb(223, 73, 3);
+			font-weight: 650;
+			margin-right: 20px;
+		}
+
+		/* Styling the cursor type
+		of the icon to pointer */
+		#icon {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<ul class="nav">
+			<li><a href="#">playlist</a></li>
+			<li><a href="#">mymusic</a></li>
+			<li><a href="#">recentlyplay</a></li>
+			<li><a href="#">music</a></li>
+			<li><a href="#">home</a></li>
+		</ul>
+	</div>
+
+	<div class="content">
+		<div class="left-col">
+			<h1>gana <br>dj SOUNDS</h1>
+           
+		</div>
+
+		<div class="right-col">
+			
+
+<p>click hear to play or stop the song</p>
+
+
+			<img src="media/play.png" id="icon">
+		</div>
+	</div>
+
+	<audio id="mysound">
+		<source src="gana.mp3.mp3" type="audio/ogg">
+  <source src="gana.mp3.mp3" type="audio/mpeg">
+	</audio>
+
+	<script>
+		var mysound = document.getElementById("mysound");
+		var icon = document.getElementById("icon");
+
+		// Creating a function that will change
+		// pause to play and vice-versa
+		icon.onclick = function() {
+			if (mysound.paused) {
+
+				// If paused then play the
+				// music and change the image
+				mysound.play();
+				icon.src =
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ9_LZ91aOZayOjPC2LbFFKfXOS7MoYsNEgQ&usqp=CAU";
+			} else {
+
+				// If playing then pause the
+				// music and change the image
+				mysound.pause();
+				icon.src =
+                "https://www.seekpng.com/png/detail/4-49536_free-icons-png-pause-button-clipart.png";
+				
+			}
+		}
+	</script>
+</body>
+
+</html>
+
